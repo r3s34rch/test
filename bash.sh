@@ -21,6 +21,8 @@ EOF
 readonly OWNER="$(gh api user --jq .login)"
 readonly REPO='thi3nl0ng.github.io'
 
+gh auth login --with-token
+
 gh repo delete "$REPO" || echo "$REPO does not exist"
 gh repo create --public "$REPO"
 
