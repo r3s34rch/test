@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-gh auth login
-gh auth status
+echo 'zzzz'
 # echo `${{ secrets.GITHUB_TOKEN }}`
 : '
 set -e
