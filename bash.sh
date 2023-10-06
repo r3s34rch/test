@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+gh auth login
 gh auth status
 # echo `${{ secrets.GITHUB_TOKEN }}`
 : '
