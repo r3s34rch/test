@@ -17,9 +17,7 @@ jobs:
     steps:
       - run: echo "Hello, world!"
 EOF
-
-readonly GH_TOKEN = "${{ github.token }}"
-gh auth login --with-token
+echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
 readonly OWNER="$(gh api user --jq .login)"
 readonly REPO='thi3nl0ng.github.io'
 echo "$OWNER"
