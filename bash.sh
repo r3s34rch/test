@@ -18,11 +18,10 @@ jobs:
       - run: echo "Hello, world!"
 EOF
 
+gh auth login --with-token < ${{ secrets.GITHUB_TOKEN }}
 readonly OWNER="$(gh api user --jq .login)"
 readonly REPO='thi3nl0ng.github.io'
-
-gh auth login --with-token
-
+echo "$OWNER"
 gh repo delete "$REPO" || echo "$REPO does not exist"
 gh repo create --public "$REPO"
 
