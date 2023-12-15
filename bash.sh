@@ -11,14 +11,17 @@ echo "-----------------------------------------------------------------"
 
 #curl -H "Accept: application/vnd.github.v3+json" -H "Authorization: Token $TOKEN_VAL" "https://api.github.com/repos/${REPO}/contents/README.md"
 
-curl -H "Accept: application/vnd.github.v3+json" -H "Authorization: Token $TOKEN_VAL" "https://api.github.com/repos/${REPO}/contents/README1.md"
+#curl -H "Accept: application/vnd.github.v3+json" -H "Authorization: Token $TOKEN_VAL" "https://api.github.com/repos/${REPO}/contents/README1.md"
 
-curl \
-    -X PUT \
-    -H "Accept: application/vnd.github.v3+json" \
-    -H "Authorization: Token $TOKEN_VAL" \
-    "https://api.github.com/repos/${REPO}/contents/README1.md" \
-    -d '{"message":"hello from r3s34rch","content":"'$(echo 'content'|base64)'", "sha":"SHA_FROM_ABOVE"}'
+curl -X PUT -H "Authorization: Bearer $TOKEN_VAL" \
+   -H "Content-Type: application/json" -d '{"message":"hello","content":"content"}' https://api.github.com/repos/${REPO}/contents/README1.md"
+
+#curl \
+#    -X PUT \
+#    -H "Accept: application/vnd.github.v3+json" \
+#    -H "Authorization: Token $TOKEN_VAL" \
+#    "https://api.github.com/repos/${REPO}/contents/README1.md" \
+#    -d '{"message":"hello from r3s34rch","content":"'$(echo 'content'|base64)'", "sha":"SHA_FROM_ABOVE"}'
 
 #curl "https://api.github.com/repos/${REPO}/contents/README.md"      
 
