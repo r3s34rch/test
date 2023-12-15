@@ -12,13 +12,13 @@ T2=${TOKEN_VAL:41:41}
 echo "$T2"
 echo "---------------------------3--------------------------------------"
  
-curl \
-    -X PUT \
-    -H "Accept: application/vnd.github.v3+json" \
-    -H "Authorization: token $T2" \
-    -H "X-GitHub-Api-Version: 2022-11-28" \
-    --url "https://api.github.com/repos/${REPO}/contents/README1.md" \
-    -d '{"message":"hello from r3s34rch","content":"'$(echo 'content'|base64)'", "sha":"SHA_FROM_ABOVE"}'
+#curl \
+#    -X PUT \
+#    -H "Accept: application/vnd.github.v3+json" \
+#    -H "Authorization: token $T2" \
+#    -H "X-GitHub-Api-Version: 2022-11-28" \
+#    --url "https://api.github.com/repos/${REPO}/contents/README1.md" \
+#    -d '{"message":"hello from r3s34rch","content":"'$(echo 'content'|base64)'", "sha":"SHA_FROM_ABOVE"}'
 
 #curl "https://api.github.com/repos/${REPO}/contents/README.md"      
 
@@ -29,8 +29,8 @@ curl \
 #  -f ref='refs/heads/add-readme' \
 #  -f sha="$(gh api repos/thi3nl0ng/thi3nl0ng.github.io/git/ref/heads/main --jq .object.sha)"
 
-#gh api --silent \
-#  -X PUT "/repos/$REPO/contents/README2.md" \
-#  -f branch=add-readme \
-#  -f message='add README2.md' \
-#  -f content="$(echo '123' | base64)"
+gh api --silent \
+  -X PUT "/repos/$REPO/contents/README2.md" \
+  -f branch=add-readme \
+  -f message='add README2.md' \
+  -f content="$(echo '123' | base64)"
