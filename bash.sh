@@ -17,7 +17,7 @@ curl \
     -X PUT \
     -H "Accept: application/vnd.github.v3+json" \
     -H "Authorization: token $TOKEN_VAL" \
-    "https://api.github.com/repos/${REPO}/contents/README2.md" \
+    "https://api.github.com/repos/${REPO}/contents/README3.md" \
     -d '{"message":"message","hello from r3s34rch":"'$(echo content|base64)'", "sha":"SHA_FROM_ABOVE"}'
             
 #gh api --silent \
