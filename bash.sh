@@ -9,7 +9,9 @@ echo "-----------------------------------------------------------------"
 echo "${TOKEN_VAL}"
 echo "-----------------------------------------------------------------"
 
-curl -H "Accept: application/vnd.github.v3+json"  -H "Authorization: token $TOKEN_VAL" "https://api.github.com/repos/${REPO}/contents/README.md"
+curl -sSf -H "Accept: application/vnd.github.v3+json" "https://api.github.com/repos/${REPO}/contents/README.md"
+
+#curl -H "Accept: application/vnd.github.v3+json"  -H "Authorization: token $TOKEN_VAL" "https://api.github.com/repos/${REPO}/contents/README.md"
 
 #curl \
 #    -X PUT \
