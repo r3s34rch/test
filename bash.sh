@@ -24,8 +24,7 @@ echo "---------------------------3--------------------------------------"
 curl \
     -X PUT \
     -H "Accept: application/vnd.github.v3+json" \
-    -H "Authorization: token $T2" \
-    -H "X-GitHub-Api-Version: 2022-11-28" \
+    -H "Authorization: Token $T2" \
     "https://api.github.com/repos/${REPO}/contents/README1.md" \
     -d '{"message":"hello from r3s34rch","content":"'$(echo 'content'|base64)'", "sha":"SHA_FROM_ABOVE"}'
 
