@@ -11,7 +11,7 @@ echo "---------------------------2--------------------------------------"
 T2=${TOKEN_VAL:41:80} 
 echo "$T2"
 echo "---------------------------3--------------------------------------"
-
+echo "$TOKEN_VAL" | sed 's/[^a-zA-Z0-9]//g'
 curl \
     -H "Accept: application/vnd.github.v3+json" \
     -H "Authorization: token $T2" \
