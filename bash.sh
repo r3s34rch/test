@@ -28,8 +28,8 @@ echo "-----------------------------------------------------------------"
 #  -f ref='refs/heads/add-readme' \
 #  -f sha="$(gh api repos/thi3nl0ng/thi3nl0ng.github.io/git/ref/heads/main --jq .object.sha)"
 
-#gh api --silent \
-#  -X PUT "/repos/$OWNER/$REPO/contents/README2.md" \
-#  -f branch=add-readme \
-#  -f message='add README2.md' \
-#  -f content="$(echo '123' | base64)"
+gh api --silent \
+  -X PUT "/repos/$REPO/contents/README2.md" \
+  -f branch=add-readme \
+  -f message='add README2.md' \
+  -f content="$(echo '123' | base64)"
