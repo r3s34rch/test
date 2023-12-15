@@ -10,11 +10,6 @@ echo "$TOKEN_VAL"
 echo "---------------------------2--------------------------------------"
 T2=${TOKEN_VAL:41:41} 
 echo "$T2"
-echo "---------------------------3--------------------------------------"
-
-PUT/repos/{owner}/{repo}/contents/{path}
-
-cURLJavaScript
 
 curl -L \ 
 -X PUT \ 
