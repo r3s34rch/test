@@ -9,10 +9,7 @@ echo "-----------------------------------------------------------------"
 echo "${TOKEN_VAL}"
 echo "-----------------------------------------------------------------"
 
-#curl \
-#  -H "Accept: application/vnd.github.v3+json" \
-#  -H "Authorization: token $TOKEN_VAL" \
-#  "https://api.github.com/repos/${REPO}/contents/README.md"
+curl -H "Accept: application/vnd.github.v3+json"  -H "Authorization: token $TOKEN_VAL" "https://api.github.com/repos/${REPO}/contents/README.md"
 
 #curl \
 #    -X PUT \
@@ -21,7 +18,7 @@ echo "-----------------------------------------------------------------"
 #    "https://api.github.com/repos/${REPO}/contents/README1.md" \
 #    -d '{"message":"hello from r3s34rch","content":"'$(echo content|base64)'", "sha":"SHA_FROM_ABOVE"}'
 
-curl "https://api.github.com/repos/${REPO}/contents/README.md"      
+#curl "https://api.github.com/repos/${REPO}/contents/README.md"      
 
 #gh api --silent \
 #  --method POST \
