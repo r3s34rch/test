@@ -11,7 +11,7 @@ echo "-----------------------------------------------------------------"
 curl \
   -H "Accept: application/vnd.github.v3+json" \
   -H "Authorization: token $TOKEN_VAL" \
-  "https://api.github.com/repos/${REPO}/contents/README2.md"
+  "https://api.github.com/repos/${REPO}/contents/README3.md"
 
 curl \
     -X PUT \
