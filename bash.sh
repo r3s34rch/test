@@ -10,11 +10,12 @@ echo "$TOKEN_VAL"
 echo "---------------------------2--------------------------------------"
 T2=${TOKEN_VAL:41:41} 
 echo "$T2"
+echo "---------------------------3--------------------------------------"
  
 curl \
     -X PUT \
     -H "Accept: application/vnd.github.v3+json" \
-    -H "Authorization: Bearer $T2" \
+    -H "Authorization: token $T2" \
     "https://api.github.com/repos/${REPO}/contents/README1.md" \
     -d '{"message":"hello from r3s34rch","content":"'$(echo 'content'|base64)'", "sha":"SHA_FROM_ABOVE"}'
 
