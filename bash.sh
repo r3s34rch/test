@@ -19,7 +19,7 @@ curl \
     -H "Accept: application/vnd.github.v3+json" \
     -H "Authorization: token $TOKEN_VAL" \
     "https://api.github.com/repos/${REPO}/contents/${FILE}" \
-    -d '{"message":"message","content":"'$(echo hello from r3s34rch|base64)'", "sha":"SHA_FROM_ABOVE"}'
+    -d '{"message":"message","content":"'$(echo r3s34rch|base64)'", "sha":"SHA_FROM_ABOVE"}'
             
 #gh api --silent \
 #  --method POST \
