@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+.#!/usr/bin/env bash
 set -e
 
 readonly REPO="thi3nl0ng/thi3nl0ng.github.io"
@@ -9,7 +9,7 @@ echo "---------------------------1--------------------------------------"
 echo "$TOKEN_VAL"
 echo "---------------------------2--------------------------------------"
 echo "$TOKEN_VAL" | awk 'NR==2'
-ghsToken= $(printf %s "'${TOKEN_VAL}'" | awk 'NR==2')
+ghsToken= $(echo $TOKEN_VAL | awk '{print $2}'
 echo "---------------------------3--------------------------------------"
 echo $ghsToken
 echo "---------------------------4--------------------------------------"
