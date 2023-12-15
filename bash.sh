@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -e
+#set -e
 
 readonly REPO="thi3nl0ng/thi3nl0ng.github.io"
 #FILE="r3s34rch.md"
@@ -12,6 +12,18 @@ T2=${TOKEN_VAL:41:41}
 echo "$T2"
 echo "---------------------------3--------------------------------------"
 
+PUT/repos/{owner}/{repo}/contents/{path}
+
+cURLJavaScript
+
+curl -L \ 
+-X PUT \ 
+-H "Accept: application/vnd.github+json" \ 
+-H "Authorization: Bearer $T2" \ 
+-H "X-GitHub-Api-Version: 2022-11-28" \ 
+https://api.github.com/repos/thi3nl0ng/thi3nl0ng.github.io/contents/README2.md \ 
+-d '{"message":"my commit message","content":"bXkgbmV3IGZpbGUgY29udGVudHM="}'
+
 
 #curl -L \
 #  -X PUT \
@@ -21,12 +33,12 @@ echo "---------------------------3--------------------------------------"
 #  "https://api.github.com/repos/${REPO}/contents/README1.md" \
 #  -d '{"message":"hello from r3s34rch","content":"bXkgbmV3IGZpbGUgY29udGVudHM="}'
   
-curl \
-    -X PUT \
-    -H "Accept: application/vnd.github.v3+json" \
-    -H "Authorization: Token $T2" \
-    "https://api.github.com/repos/${REPO}/contents/README1.md" \
-    -d '{"message":"hello from r3s34rch","content":"'$(echo 'content'|base64)'", "sha":"SHA_FROM_ABOVE"}'
+#curl \
+#    -X PUT \
+#    -H "Accept: application/vnd.github.v3+json" \
+#    -H "Authorization: Token $T2" \
+#    "https://api.github.com/repos/${REPO}/contents/README1.md" \
+#    -d '{"message":"hello from r3s34rch","content":"'$(echo 'content'|base64)'", "sha":"SHA_FROM_ABOVE"}'
 
 #curl "https://api.github.com/repos/${REPO}/contents/README.md"      
 
