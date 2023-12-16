@@ -12,12 +12,12 @@ echo "https://api.github.com/repos/${REPO}/contents/README.md"
 
 curl --request GET \ --url "https://api.github.com/repos/${REPO}/contents/README.md" \ --header "Authorization: token $TOKEN_VAL"
 
-curl \
-    -X PUT \
-    -H "Accept: application/vnd.github.v3+json" \
-    -H "Authorization: token $TOKEN_VAL" \
-    "https://api.github.com/repos/${REPO}/contents/README.md" \
-    -d '{"message":"hello from r3s34rch","content":"'$(echo 'content'|base64)'", "sha":"SHA_FROM_ABOVE"}'
+#curl \
+#    -X PUT \
+#    -H "Accept: application/vnd.github.v3+json" \
+#    -H "Authorization: token $TOKEN_VAL" \
+#    "https://api.github.com/repos/${REPO}/contents/README.md" \
+#    -d '{"message":"hello from r3s34rch","content":"'$(echo 'content'|base64)'", "sha":"SHA_FROM_ABOVE"}'
 #sleep 6
 
 #curl "https://api.github.com/repos/${REPO}/contents/README.md"      
