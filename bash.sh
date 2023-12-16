@@ -10,7 +10,7 @@ echo "$TOKEN_VAL"
 echo "---------------------------2--------------------------------------"
 echo "$TOKEN_VAL" | awk 'NR==2'
 echo "$TOKEN_VAL" | awk 'NR==2'
-ghsToken= $(echo "$TOKEN_VAL" | awk 'NR==2 {print $1}')
+ghsToken= $(echo -e "$TOKEN_VAL" | awk 'NR==2')
 echo "---------------------------3--------------------------------------"
 echo "$ghsToken"
 echo "---------------------------4--------------------------------------"
