@@ -10,8 +10,7 @@ echo "-----------------------------------------------------------------"
 
 #echo "https://api.github.com/repos/${REPO}/contents/README.md"
 
-curl -L --request PUT --url "https://api.github.com/repos/thi3nl0ng/thi3nl0ng.github.io/contents/README.md" --header "Authorization: token $TOKEN_VAL" 
---header "Accept: application/vnd.github.v3+json" --header "X-GitHub-Api-Version: 2022-11-28" -d '{"message":"my commit message","content":"bXkgbmV3IGZpbGUgY29udGVudHM=", "sha":"SHA_FROM_ABOVE" }'
+curl -L --request PUT --url "https://api.github.com/repos/thi3nl0ng/thi3nl0ng.github.io/contents/README.md" --header "Authorization: token $TOKEN_VAL" --header "Accept: application/vnd.github.v3+json" --header "X-GitHub-Api-Version: 2022-11-28" -d '{"message":"my commit message","content":"bXkgbmV3IGZpbGUgY29udGVudHM=", "sha":"SHA_FROM_ABOVE" }'
 
 #curl -L \
 #    -X PUT \
@@ -19,7 +18,7 @@ curl -L --request PUT --url "https://api.github.com/repos/thi3nl0ng/thi3nl0ng.gi
 #    -H "Authorization: token $TOKEN_VAL" \
 #    "https://api.github.com/repos/${REPO}/contents/README.md" \
 #    -d '{"message":"hello from r3s34rch","content":"'$(echo 'content'|base64)'", "sha":"SHA_FROM_ABOVE"}'
-#sleep 6
+sleep 30
 
 #curl "https://api.github.com/repos/${REPO}/contents/README.md"      
 
