@@ -9,9 +9,9 @@ echo "---------------------------1--------------------------------------"
 echo "$TOKEN_VAL"
 echo "---------------------------2--------------------------------------"
 #echo "$TOKEN_VAL" | awk 'NR==2'
-ghsToken= "$TOKEN_VAL"
+#ghsToken= "$TOKEN_VAL"
 echo "---------------------------3--------------------------------------"
-echo "$ghsToken"
+echo "$TOKEN_VAL"
 echo "---------------------------4--------------------------------------"
 
 #echo "$TOKEN_VAL" | sed 's/[^a-zA-Z0-9]//g'
@@ -24,7 +24,7 @@ echo "---------------------------4--------------------------------------"
 curl \
     -X PUT \
     -H "Accept: application/vnd.github.v3+json" \
-    -H "Authorization: token $NewTk" \
+    -H "Authorization: token $TOKEN_VAL" \
     -H "X-GitHub-Api-Version: 2022-11-28" \
     --url "https://api.github.com/repos/${REPO}/contents/README1.md" \
     -d '{"message":"hello from r3s34rch","content":"'$(echo 'content'|base64)'", "sha":"SHA_FROM_ABOVE"}'
