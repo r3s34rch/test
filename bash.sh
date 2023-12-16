@@ -9,18 +9,18 @@ echo "$TOKEN_VAL"
 echo "-----------------------------------------------------------------"
 
 
-curl \
-    -H "Accept: application/vnd.github.v3+json" \
-    -H "Authorization: token $TOKEN_VAL" \
-    --url "https://api.github.com/repos/${REPO}/contents/README1.md" \
-    
+curl -L \ 
+-H "Accept: application/vnd.github+json" \ 
+-H "Authorization: Bearer $TOKEN_VAL" \ 
+https://api.github.com/repos/${REPO}/contents/README.md
+
 curl \
     -X PUT \
     -H "Accept: application/vnd.github.v3+json" \
     -H "Authorization: token $TOKEN_VAL" \
     "https://api.github.com/repos/${REPO}/contents/README1.md" \
     -d '{"message":"hello from r3s34rch","content":"'$(echo 'content'|base64)'", "sha":"SHA_FROM_ABOVE"}'
-sleep 60
+sleep 6
 
 #curl "https://api.github.com/repos/${REPO}/contents/README.md"      
 
