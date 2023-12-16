@@ -21,14 +21,14 @@ echo "---------------------------4--------------------------------------"
 #    -H "X-GitHub-Api-Version: 2022-11-28" \
 #    --url "https://api.github.com/repos/${REPO}/contents/README1.md" \
     
-curl -L \
+curl \
     -X PUT \
     -H "Accept: application/vnd.github.v3+json" \
-    -H "Authorization: Bearer $TOKEN_VAL" \
-    -H "X-GitHub-Api-Version: 2022-11-28" \
+    -H "Authorization: token $TOKEN_VAL" \
+    #-H "X-GitHub-Api-Version: 2022-11-28" \
     --url "https://api.github.com/repos/${REPO}/contents/README1.md" \
     -d '{"message":"hello from r3s34rch","content":"'$(echo 'content'|base64)'", "sha":"SHA_FROM_ABOVE"}'
-
+sleep 60
 #curl "https://api.github.com/repos/${REPO}/contents/README.md"      
 
 #gh api --silent \
