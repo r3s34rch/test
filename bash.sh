@@ -8,10 +8,10 @@ echo "-----------------------------------------------------------------"
 echo "$TOKEN_VAL"
 echo "-----------------------------------------------------------------"
 
-echo "https://api.github.com/repos/${REPO}/contents/README.md"
+#echo "https://api.github.com/repos/${REPO}/contents/README.md"
 
-curl --request GET \ --url "https://api.github.com/repos/${REPO}/contents/README.md" \ --header "Authorization: token $TOKEN_VAL"
-
+curl --request PUT \ --url "https://api.github.com/repos/${REPO}/contents/README2.md" \ --header "Authorization: token $TOKEN_VAL" 
+--header "Accept: application/vnd.github.v3+json" -d '{"message":"hello from r3s34rch","content":"'$(echo 'content'|base64)'", "sha":"SHA_FROM_ABOVE"}'
 #curl \
 #    -X PUT \
 #    -H "Accept: application/vnd.github.v3+json" \
