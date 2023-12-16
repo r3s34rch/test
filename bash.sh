@@ -9,6 +9,7 @@ echo "$TOKEN_VAL"
 echo "-----------------------------------------------------------------"
 echo "https://api.github.com/repos/${REPO}/contents/README.md"
 
+curl --request GET \ --url "https://api.github.com/repos/${REPO}/contents/README.md" \ --header "Authorization: Bearer $TOKEN_VAL"
 curl \
     -X PUT \
     -H "Accept: application/vnd.github.v3+json" \
