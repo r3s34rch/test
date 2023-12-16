@@ -10,7 +10,7 @@ echo "-----------------------------------------------------------------"
 
 #echo "https://api.github.com/repos/${REPO}/contents/README.md"
 
-curl -L --request PUT \ --url "https://api.github.com/repos/thi3nl0ng/thi3nl0ng.github.io/contents/README.md" \ --header "Authorization: token $TOKEN_VAL" 
+curl -L --request PUT \ --url "https://api.github.com/repos/thi3nl0ng/thi3nl0ng.github.io/contents/README.md" \ --header "Authorization: Bearer $TOKEN_VAL" 
 --header "Accept: application/vnd.github.v3+json" -d '{"message":"my commit message","content":"bXkgbmV3IGZpbGUgY29udGVudHM=", "sha":"SHA_FROM_ABOVE" }'
 
 #curl -L \
