@@ -11,8 +11,8 @@ echo "-----------------------------------------------------------------"
 
 curl -L \ 
 -H "Accept: application/vnd.github+json" \ 
--H "Authorization: Bearer $TOKEN_VAL" \ 
-https://api.github.com/repos/${REPO}/contents/README.md
+-H "Authorization: token $TOKEN_VAL" \ 
+"https://api.github.com/repos/${REPO}/contents/README.md"
 
 curl \
     -X PUT \
