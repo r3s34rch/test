@@ -15,9 +15,9 @@ echo "$TOKEN_VAL1"
 #echo "-----------------------------------------------------------------"
 #echo "$TOKEN_VAL2"
 echo "-----------------------------------------------------------------"
-#for f in {a..z} {A..Z} {0..9}; do 
-#echo "${TOKEN_VAL:0:39}$f" 
-#done
+for f in {a..z} {A..Z} {0..9}; do 
+    echo "${TOKEN_VAL:0:39}$f" 
+done
 
 #echo "https://api.github.com/repos/${REPO}/contents/README.md"
 Header="Authorization: token $TOKEN_VAL"
