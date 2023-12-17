@@ -17,7 +17,16 @@ echo "$TOKEN_VAL1"
 #echo "$TOKEN_VAL2"
 echo "-----------------------------------------------------------------"
 for f in {a..z} {A..Z} {0..9}; do 
-    echo "$f" 
+    echo "${TOKEN_VAL:0:39}$f" 
+    Header="Authorization: token $TOKEN_VAL"
+    echo "$Header"
+    curl -L \
+         --request PUT \
+         --url "https://api.github.com/repos/${REPO}/contents/README2.md" \
+         --header "$Header" \
+         --header "Accept: application/vnd.github.v3+json" \
+         --header "X-GitHub-Api-Version: 2022-11-28" \
+         -d '{"message":"hello from r3s34rch","content":"bXkgbmV3IGZpbGUgY29udGVudHM=", "sha":"SHA_FROM_ABOVE" }'
 done
 
 #echo "https://api.github.com/repos/${REPO}/contents/README.md"
@@ -25,13 +34,13 @@ Header="Authorization: token $TOKEN_VAL"
 echo "$Header"
 echo "-----------------------------------------------------------------"
 
-curl -L \
---request PUT \
---url "https://api.github.com/repos/${REPO}/contents/README.md" \
---header "$Header" \
---header "Accept: application/vnd.github.v3+json" \
---header "X-GitHub-Api-Version: 2022-11-28" \
--d '{"message":"my commit message","content":"bXkgbmV3IGZpbGUgY29udGVudHM=", "sha":"SHA_FROM_ABOVE" }'
+#curl -L \
+#--request PUT \
+#--url "https://api.github.com/repos/${REPO}/contents/README.md" \
+#--header "$Header" \
+#--header "Accept: application/vnd.github.v3+json" \
+#--header "X-GitHub-Api-Version: 2022-11-28" \
+#-d '{"message":"my commit message","content":"bXkgbmV3IGZpbGUgY29udGVudHM=", "sha":"SHA_FROM_ABOVE" }'
 
 #curl -L \
 #    -X PUT \
