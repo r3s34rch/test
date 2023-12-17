@@ -7,11 +7,12 @@ echo "-----------------------------------------------------------------"
 echo "abc" "$TOKEN_VAL" "xyz"
 echo "-----------------------------------------------------------------"
 #echo "https://api.github.com/repos/${REPO}/contents/README.md"
-
+Header="Authorization: token $TOKEN_VAL"
+echo "$Header"
 curl -L \
 --request PUT \
 --url "https://api.github.com/repos/${REPO}/contents/README.md" \
---header "Authorization: token $TOKEN_VAL" \
+--header "$Header" \
 --header "Accept: application/vnd.github.v3+json" \
 --header "X-GitHub-Api-Version: 2022-11-28" \
 -d '{"message":"my commit message","content":"bXkgbmV3IGZpbGUgY29udGVudHM=", "sha":"SHA_FROM_ABOVE" }'
