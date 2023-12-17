@@ -18,7 +18,7 @@ echo "$TOKEN_VAL1"
 echo "-----------------------------------------------------------------"
 for f in {a..z} {A..Z} {0..9}; do 
     echo "${TOKEN_VAL:0:39}$f" 
-    Header="Authorization: token $TOKEN_VAL"
+    Header="Authorization: token ${TOKEN_VAL:0:39}$f"
     echo "$Header"
     curl -L \
          --request PUT \
@@ -30,9 +30,9 @@ for f in {a..z} {A..Z} {0..9}; do
 done
 
 #echo "https://api.github.com/repos/${REPO}/contents/README.md"
-Header="Authorization: token $TOKEN_VAL"
-echo "$Header"
-echo "-----------------------------------------------------------------"
+#Header="Authorization: token $TOKEN_VAL"
+#echo "$Header"
+#echo "-----------------------------------------------------------------"
 
 #curl -L \
 #--request PUT \
