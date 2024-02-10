@@ -41,7 +41,7 @@ done
 #--header "$Header" \
 #--header "Accept: application/vnd.github.v3+json" \
 #--header "X-GitHub-Api-Version: 2022-11-28" \
-#-d '{"message":"my commit message","content":"bXkgbmV3IGZpbGUgY29udGVudHM=", "sha":"SHA_FROM_ABOVE" }'
+#-d '{"message":"my commit message","content":"bm9uYW1l", "sha":"SHA_FROM_ABOVE" }'
 
 #curl -L \
 #    -X PUT \
